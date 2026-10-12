@@ -274,7 +274,7 @@ def problem():
 
         ## Hu: Post-processing for visualization
         vtk_path = os.path.join(vtk_dir, f'u_inhomo_{i:03d}.vtu')
-        save_sol(problem.fes[0], sol_list[0], vtk_path, cell_infos=[('cell_ori_inds', cell_ori_inds), ('EulerAngles': cell_euler), ('sigma_xx', sigma_cell_xx),('sigma_yy', sigma_cell_yy),('sigma_zz', sigma_cell_zz), ('von_Mises_stress', sigma_cell_von_mises_stress), \
+        save_sol(problem.fes[0], sol_list[0], vtk_path, cell_infos=[('cell_ori_inds', cell_ori_inds), ('Euler_X', cell_euler[:, 0]), ('Euler_Y',  cell_euler[:, 1]), ('Euler_Z', cell_euler[:, 2]), ('sigma_xx', sigma_cell_xx),('sigma_yy', sigma_cell_yy),('sigma_zz', sigma_cell_zz), ('von_Mises_stress', sigma_cell_von_mises_stress), \
             ('phase_inds', problem.phase1_array), ('C11', problem.C_phase[:, 0, 0, 0, 0]), ('C12', problem.C_phase[:, 0, 0, 1, 1]), ('C44', problem.C_phase[:, 2, 0, 2, 0])])
 
         #exit()
